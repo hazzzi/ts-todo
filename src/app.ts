@@ -7,7 +7,7 @@ app.get('/', (request: Request, response: Response) => {
     response.send('hello');
 })
 
-app.use("/router", router)
+app.use(express.static('public'))
 
 app.listen(3000, () => {
     console.log('start server');
