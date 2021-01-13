@@ -1,6 +1,7 @@
 import { Request, Response } from "express"
 import { ITodo } from "./../../types/todo"
 import Todo from "./../../models/todo"
+import { request } from "http"
 
 const getTodos = async (request: Request, response: Response): Promise<void> => {
     try {
@@ -48,3 +49,22 @@ const updateTodo = async (request: Request, response: Response): Promise<void> =
         throw error
     }
 }
+
+const deleteTodo = async (request: Request, response: Response): Promise<void> => {
+    try {
+        const { params: { id } } = request
+
+        const deletedTodo: ITodo | null = await Todo.findByIdAndRemove({ _id: id })
+        const allTodos: ITodo[] = await Todo.find()
+
+        response.status(200).json({
+            message: "Todo deleted",
+            todo: deletedTodo,
+            todos: allTodos
+        })
+    } catch (error) {
+        throw error
+    }
+}
+
+export { getTodos, updateTodo, addTodo, deleteTodo }
