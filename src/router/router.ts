@@ -1,9 +1,14 @@
-import express, { Request, Response, NextFunction } from "express";
+import { Router } from "express";
+import { getTodos, addTodo, deleteTodo, updateTodo } from "../controllers/todos"
 
-const router = express.Router();
+const router: Router = Router();
 
-router.get('/', (req: Request, res: Response) => {
-    res.send("world");
-})
+router.get("/todos", getTodos)
 
-export = router;
+router.post("/add-todo", addTodo)
+
+router.put("/edit-todo/:id", updateTodo)
+
+router.delete("/delete-todo/:id", deleteTodo)
+
+export default router
