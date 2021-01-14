@@ -7,7 +7,8 @@
 - [ ] 완료 표시
 
 ## 프로젝트 셋팅 방법
-[참고](https://helloinyong.tistory.com/124)
+[참고1](https://helloinyong.tistory.com/124)
+[참고2](https://www.freecodecamp.org/news/how-to-build-a-todo-app-with-react-typescript-nodejs-and-mongodb/)
 1. yarn init
 2. tsc -init
 3. echo "/node_modules" >> .gitignore

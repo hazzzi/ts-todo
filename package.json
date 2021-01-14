@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "mongoose": "^5.11.11"
+    "mongoose": "5.10.19"
   },
   "devDependencies": {
     "@types/cors": "^2.8.9",
